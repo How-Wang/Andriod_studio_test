@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Tutorial</string>
+    <string name="first_button_text">China</string>
+    <string name="ChinaQ1">Question 1</string>
+</resources>

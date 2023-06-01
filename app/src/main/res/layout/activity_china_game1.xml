@@ -22,9 +22,10 @@
         app:layout_constraintVertical_bias="0.45" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button1"
         android:layout_width="217dp"
         android:layout_height="104dp"
+        android:onClick="WrongClicked"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,7 +41,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/button1"
         app:layout_constraintVertical_bias="0.073" />
 
     <Button
@@ -65,20 +66,20 @@
         app:layout_constraintTop_toBottomOf="@+id/button3" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/Question_textview"
         android:layout_width="240dp"
         android:layout_height="173dp"
         android:background="#DDFFFFFF"
         android:importantForAccessibility="no"
         android:text="@string/ChinaQ1"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/button1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/Score_textview"
         app:layout_constraintVertical_bias="0.562" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/Score_textview"
         android:layout_width="116dp"
         android:layout_height="21dp"
         android:background="#C6E61212"

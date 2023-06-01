@@ -16,24 +16,27 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ((GlobalVariable) this.getApplication()).setVariable(0);
     }
     public void CountryClicked(View v){
-        ImageButton imageButton = findViewById(R.id.China_button);
-        CharSequence contentDescription = imageButton.getContentDescription();
-        // If needed, convert the content description to a String
-        String contentDescriptionString = contentDescription != null ? contentDescription.toString() : "";
-        Log.d("20", contentDescriptionString);
 
-        // split string and feed it into Class name to call
-        String className = "com.example.tutorial." + contentDescriptionString + "_Game1"; // Replace with the fully qualified class name of China_Game1
+            ImageButton imageButton = (ImageButton) v;
+            // mageButton imageButton = findViewById(R.id.China_button);
 
-        try {
-            Class<?> targetClass = Class.forName(className);
-            Intent i = new Intent(this, targetClass);
-            startActivity(i);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
+            CharSequence contentDescription = imageButton.getContentDescription();
+            // If needed, convert the content description to a String
+            String contentDescriptionString = contentDescription != null ? contentDescription.toString() : "";
 
+            // split string and feed it into Class name to call
+            String className = "com.example.tutorial." + contentDescriptionString + "_Game1"; // Replace with the fully qualified class name of China_Game1
+
+            try {
+                Class<?> targetClass = Class.forName(className);
+                Intent i = new Intent(this, targetClass);
+                startActivity(i);
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
     }
 }

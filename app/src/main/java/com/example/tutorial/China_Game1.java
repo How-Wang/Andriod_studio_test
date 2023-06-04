@@ -1,5 +1,5 @@
 package com.example.tutorial;
-//merge test
+//mergetest
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;

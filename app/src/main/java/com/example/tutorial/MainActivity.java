@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
 
             ImageButton imageButton = (ImageButton) v;
             // mageButton imageButton = findViewById(R.id.China_button);
-
             CharSequence contentDescription = imageButton.getContentDescription();
             // If needed, convert the content description to a String
             String contentDescriptionString = contentDescription != null ? contentDescription.toString() : "";

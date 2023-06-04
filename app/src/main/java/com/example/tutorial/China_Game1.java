@@ -24,9 +24,9 @@ public class China_Game1 extends AppCompatActivity {
 
     }
     public void WrongClicked(View v){
-        ImageView checkMarkImageView = findViewById(R.id.check_mark);
-        Animation checkMarkAnimation = AnimationUtils.loadAnimation(this, R.anim.check_mark_animation);
-        checkMarkImageView.startAnimation(checkMarkAnimation);
+//        ImageView checkMarkImageView = findViewById(R.id.check_mark);
+//        Animation checkMarkAnimation = AnimationUtils.loadAnimation(this, R.anim.check_mark_animation);
+//        checkMarkImageView.startAnimation(checkMarkAnimation);
 
         Intent i = new Intent(this, China_Game2.class);
         startActivity(i);

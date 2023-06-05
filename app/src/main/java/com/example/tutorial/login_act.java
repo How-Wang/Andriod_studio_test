@@ -17,17 +17,27 @@ public class login_act extends AppCompatActivity {
         setContentView(R.layout.activity_login);
     }
     public void SignupAct(View v){
-        TextView t = findViewById(R.id.login_account);
-        String loginAC = t.getText().toString();
-        Log.d("info", loginAC);
-
-        TextView x = findViewById(R.id.LoginPassword);
-        String loginPw = x.getText().toString();
-        Log.d("info", loginPw);
+//        TextView t = findViewById(R.id.login_account);
+//        String loginAC = t.getText().toString();
+//        Log.d("info", loginAC);
+//
+//        TextView x = findViewById(R.id.LoginPassword);
+//        String loginPw = x.getText().toString();
+//        Log.d("info", loginPw);
         Intent i = new Intent(this, Signup_Act.class);
         startActivity(i);
     }
+    public void loginAct(View v){
+        TextView t = findViewById(R.id.login_account);
+        String loginAC = t.getText().toString();
+        Log.d("login_info", loginAC);
 
+        TextView x = findViewById(R.id.LoginPassword);
+        String loginPw = x.getText().toString();
+        Log.d("login_info", loginPw);
+//        Intent i = new Intent(this, Signup_Act.class);
+//        startActivity(i);
+    }
     public void GetLoginAcc(View v){
 
     }

@@ -7,7 +7,7 @@
     tools:context=".Signup_Act">
 
     <EditText
-        android:id="@+id/editTextText2"
+        android:id="@+id/SignupAccount"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginStart="95dp"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editTextTextPassword2"
+        android:id="@+id/SignupPassword"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_marginStart="96dp"
@@ -32,7 +32,7 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+        app:layout_constraintTop_toBottomOf="@+id/SignupAccount" />
 
     <Button
         android:id="@+id/button7"
@@ -41,8 +41,9 @@
         android:layout_marginStart="155dp"
         android:layout_marginTop="59dp"
         android:layout_marginEnd="161dp"
+        android:onClick="signupClicked"
         android:text="sign up"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2" />
+        app:layout_constraintTop_toBottomOf="@+id/SignupPassword" />
 </androidx.constraintlayout.widget.ConstraintLayout>

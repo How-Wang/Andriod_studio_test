@@ -39,4 +39,9 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
     }
+    public void loginClicked(View v){
+        //launch login
+        Intent i = new Intent(this, login_act.class);
+        startActivity(i);
+    }
 }

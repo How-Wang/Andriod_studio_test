@@ -25,9 +25,10 @@ public class Signup_Act extends AppCompatActivity {
         TextView x = findViewById(R.id.SignupPassword);
         String signupPw = x.getText().toString();
         Log.d("signup_info", signupPw);
-
-//        if(帳號註冊過){//提示訊息
-//            Toast.makeText(getApplicationContext(), "帳號已註冊", Toast.LENGTH_SHORT).show();
+//        signupAC = 註冊帳號
+//        signupPW = 註冊密碼
+//        if(帳號註冊過){//不一定要 看你
+//            Toast.makeText(getApplicationContext(), "帳號名已註冊", Toast.LENGTH_SHORT).show();
 //        }
         Toast.makeText(getApplicationContext(), "註冊成功", Toast.LENGTH_SHORT).show();
         Intent i = new Intent(this, login_act.class);

@@ -25,6 +25,10 @@ public class Signup_Act extends AppCompatActivity {
         TextView x = findViewById(R.id.SignupPassword);
         String signupPw = x.getText().toString();
         Log.d("signup_info", signupPw);
+
+        TextView c = findViewById(R.id.SignupName);
+        String signupName = c.getText().toString();
+        Log.d("signup_info", signupName);
 //        signupAC = 註冊帳號
 //        signupPW = 註冊密碼
 //        if(帳號註冊過){//不一定要 看你

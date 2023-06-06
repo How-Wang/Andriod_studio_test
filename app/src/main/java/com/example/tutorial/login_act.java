@@ -40,7 +40,7 @@ public class login_act extends AppCompatActivity {
 //        Intent i = new Intent(this, Signup_Act.class);
 //        startActivity(i);
 //        if(帳號密碼符合){
-//            Intent i = new Intent(this, 登入完要跳轉的頁面);
+//            Intent i = new Intent(this, 登入完要跳轉的頁面，我暫時設王浩題目的那頁，註解掉最下面兩行);
 //            startActivity(i);
 //        }
         Toast.makeText(getApplicationContext(), "登入成功", Toast.LENGTH_SHORT).show();

@@ -31,6 +31,7 @@ public class Signup_Act extends AppCompatActivity {
         Log.d("signup_info", signupName);
 //        signupAC = 註冊帳號
 //        signupPW = 註冊密碼
+//        signupName = 註冊暱稱
 //        if(帳號註冊過){//不一定要 看你
 //            Toast.makeText(getApplicationContext(), "帳號名已註冊", Toast.LENGTH_SHORT).show();
 //        }

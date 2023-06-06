@@ -4,6 +4,122 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F6F4F4"
     tools:context=".China_Game2">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/background"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fight"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="217dp"
+        android:layout_height="104dp"
+        android:onClick="WrongClicked"
+        android:text="@string/ChinaA2_1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="217dp"
+        android:layout_height="104dp"
+        android:onClick="CorrectClicked"
+        android:text="@string/ChinaA2_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button1"
+        app:layout_constraintVertical_bias="0.073" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="217dp"
+        android:layout_height="104dp"
+        android:onClick="WrongClicked"
+        android:text="@string/ChinaA2_3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintVertical_bias="0.067" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="217dp"
+        android:layout_height="104dp"
+        android:onClick="WrongClicked"
+        android:text="@string/ChinaA2_4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/Question_textview"
+        android:layout_width="240dp"
+        android:layout_height="173dp"
+        android:background="#DDFFFFFF"
+        android:importantForAccessibility="no"
+        android:text="@string/ChinaQ2"
+        app:layout_constraintBottom_toTopOf="@+id/button1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Score_textview"
+        app:layout_constraintVertical_bias="0.562" />
+
+    <TextView
+        android:id="@+id/Score_textview"
+        android:layout_width="116dp"
+        android:layout_height="21dp"
+        android:background="#C6E61212"
+        android:fontFamily="sans-serif"
+        android:importantForAccessibility="no"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.035" />
+
+    <ImageView
+        android:id="@+id/check_mark_imageview"
+        android:layout_width="140dp"
+        android:layout_height="171dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Score_textview"
+        app:layout_constraintVertical_bias="0.123"
+        app:srcCompat="@drawable/ic_check_mark_vector" />
+
+    <ImageView
+        android:id="@+id/cross_mark_imageview"
+        android:layout_width="163dp"
+        android:layout_height="163dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.161"
+        app:srcCompat="@drawable/cross_mark_vector" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

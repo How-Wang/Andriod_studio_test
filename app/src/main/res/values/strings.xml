@@ -1,5 +1,34 @@
 <resources>
     <string name="app_name">Tutorial</string>
-    <string name="first_button_text">China</string>
-    <string name="ChinaQ1">Question 1</string>
+    <string name="china_button_text">China</string>
+    <string name="japan_button_text">Japan</string>
+    <string name="italy_button_text">Italy</string>
+    <string name="background">Background</string>
+    <string name="ChinaQ1">在清末民初前的中國，當時人們吃「鴨蛋」的機會遠高於吃「雞蛋」，請問下列何者不是原因之一？</string>
+    <string name="ChinaA1_1">雞通常是各戶農家零星飼養，而鴨則可方便交由趕鴨人一大群放養</string>
+    <string name="ChinaA1_2">雞蛋的體積小、殼薄、易碎；而鴨蛋的體積大、殼厚</string>
+    <string name="ChinaA1_3">鴨蛋可以做出比較多料理，也適合加工製成鹹蛋、皮蛋長期保存</string>
+    <string name="ChinaA1_4">鴨蛋在書籍《營養概論》內容中，表示較為營養</string>
+    <string name="ChinaQ2">是什麼契機，讓中國產生蛋品工業的崛起？</string>
+    <string name="ChinaA2_1">鴨瘟的大流行，進而產生雞蛋的替代方案</string>
+    <string name="ChinaA2_2">西方洋行的大量出口雞蛋，讓中國人開始注意</string>
+    <string name="ChinaA2_3">慈禧太后的獨鍾，使雞蛋開始蔚為風潮</string>
+    <string name="ChinaA2_4">蛋糕製作引進，吸引人民關注雞蛋</string>
+    <string name="ChinaQ3">雞蛋因為其殼薄、易碎、不好保存，那麼蛋廠會使用方法延長雞蛋的保存期限，以下何者「不是」延長的方法？</string>
+    <string name="ChinaA3_1">蛋酥</string>
+    <string name="ChinaA3_2">蛋粉</string>
+    <string name="ChinaA3_3">濕蛋</string>
+    <string name="ChinaA3_4">冰蛋</string>
+    <string name="ChinaQ4">吳憲出版了一本經典著作《營養概論》，詳細分析中國飲食的特色、缺點與改善方式。他建議吃高營養的「牛乳、雞蛋」，但為什麼沒有提到與雞蛋營養成份相去不遠的鴨蛋呢？</string>
+    <string name="ChinaA4_1">營養學是以西方營養為基礎所建立的學科，在其架構下沒有鴨蛋的位置</string>
+    <string name="ChinaA4_2">吳憲最初採集的樣本多來南方，而南方不吃鴨蛋</string>
+    <string name="ChinaA4_3">因為吳憲自己喜歡雞蛋</string>
+    <string name="ChinaA4_4">以上皆非</string>
+    <string name="ChinaQ5">下列何者不是常見的鴨蛋料理？</string>
+    <string name="ChinaA5_1">皮蛋豆腐</string>
+    <string name="ChinaA5_2">蛋黃酥</string>
+    <string name="ChinaA5_3">黑森林蛋糕</string>
+    <string name="ChinaA5_4">端午蛋黃粽</string>
+
+
 </resources>

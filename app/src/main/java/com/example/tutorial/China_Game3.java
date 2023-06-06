@@ -1,19 +1,20 @@
 package com.example.tutorial;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.ImageView;
 import android.os.Handler;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-public class China_Game1 extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class China_Game3 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_china_game1);
+        setContentView(R.layout.activity_china_game3);
 
         String s = Integer.toString(((GlobalVariable) this.getApplication()).getVariable());
         ((TextView)findViewById(R.id.Score_textview)).setText(s);
@@ -34,7 +35,7 @@ public class China_Game1 extends AppCompatActivity {
             @Override
             public void run() {
                 // Start the next activity here
-                startActivity(new Intent(China_Game1.this, China_Game2.class));
+                startActivity(new Intent(China_Game3.this, China_Game2.class));
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         }, 2000);  // 2000 milliseconds = 2 seconds
@@ -48,7 +49,7 @@ public class China_Game1 extends AppCompatActivity {
             @Override
             public void run() {
                 // Start the next activity here
-                startActivity(new Intent(China_Game1.this, China_Game2.class));
+                startActivity(new Intent(China_Game3.this, China_Game2.class));
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         }, 2000);  // 2000 milliseconds = 2 seconds

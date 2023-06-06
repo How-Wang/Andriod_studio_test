@@ -10,12 +10,12 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class China_Game3 extends AppCompatActivity {
+public class Japan_Game1 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_china_game3);
+        setContentView(R.layout.activity_japan_game1);
 
         String s = Integer.toString(((GlobalVariable) this.getApplication()).getVariable());
         ((TextView)findViewById(R.id.Score_textview)).setText(s);
@@ -39,7 +39,7 @@ public class China_Game3 extends AppCompatActivity {
             @Override
             public void run() {
                 // Start the next activity here
-                startActivity(new Intent(China_Game3.this, China_Game4.class));
+                startActivity(new Intent(Japan_Game1.this, Japan_Game2.class));
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         }, 2000);  // 2000 milliseconds = 2 seconds
@@ -53,7 +53,7 @@ public class China_Game3 extends AppCompatActivity {
             @Override
             public void run() {
                 // Start the next activity here
-                startActivity(new Intent(China_Game3.this, China_Game4.class));
+                startActivity(new Intent(Japan_Game1.this, Japan_Game2.class));
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         }, 2000);  // 2000 milliseconds = 2 seconds

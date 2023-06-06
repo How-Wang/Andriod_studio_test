@@ -4,6 +4,7 @@
     <string name="japan_button_text">Japan</string>
     <string name="italy_button_text">Italy</string>
     <string name="background">Background</string>
+    <string name="current_score">現在分數</string>
     <string name="ChinaQ1">在清末民初前的中國，當時人們吃「鴨蛋」的機會遠高於吃「雞蛋」，請問下列何者不是原因之一？</string>
     <string name="ChinaA1_1">雞通常是各戶農家零星飼養，而鴨則可方便交由趕鴨人一大群放養</string>
     <string name="ChinaA1_2">雞蛋的體積小、殼薄、易碎；而鴨蛋的體積大、殼厚</string>
@@ -30,5 +31,56 @@
     <string name="ChinaA5_3">黑森林蛋糕</string>
     <string name="ChinaA5_4">端午蛋黃粽</string>
 
+    <string name="ItalyQ1">根據制度，下列哪一種披薩不可以被稱為「正宗拿坡里披薩」？</string>
+    <string name="ItalyA1_1">水手披薩</string>
+    <string name="ItalyA1_2">瑪格麗塔披薩</string>
+    <string name="ItalyA1_3">章魚燒披薩</string>
+    <string name="ItalyA1_4">瑪格麗塔加料披薩</string>
+    <string name="ItalyQ2">下列何者「不是」受到認證的拿坡里披薩跟其他披薩的差異？</string>
+    <string name="ItalyA2_1">邊緣餅皮必須比中間高，且帶有來自烤箱的金黃色澤</string>
+    <string name="ItalyA2_2">披薩摸起來、吃起來必須相當酥脆</string>
+    <string name="ItalyA2_3">中間的裝飾佐料看起來主要呈現番茄紅，且油脂混合均勻完美</string>
+    <string name="ItalyA2_4">佐料其餘顏色可以視食材而定，可能是大蒜的白、莫札瑞拉乳酪片的白</string>
+    <string name="ItalyQ3">下列何者「不是」正宗規範不能落實追蹤的因素？</string>
+    <string name="ItalyA3_1">驗證授權需要支付高昂經費</string>
+    <string name="ItalyA3_2">披薩協會、政府或歐盟，都不太可能投下大筆資金來進行追蹤</string>
+    <string name="ItalyA3_3">規範並沒有指名多數食材的產地</string>
+    <string name="ItalyA3_4">現有規範主要強調製作過程與最後成品</string>
+    <string name="ItalyQ4">下列何者「不是」全球化下，義大利披薩產業的改變？</string>
+    <string name="ItalyA4_1">義大利部分最高檔的餐廳的廚師來自外國，如印度、突尼西亞、約旦</string>
+    <string name="ItalyA4_2">大部分居民對於外國廚師與移工的加入，保持敵意與抗拒的態度</string>
+    <string name="ItalyA4_3">外籍廚師會在餐飲作品中展現家鄉的傳統飲食</string>
+    <string name="ItalyA4_4">不少義大利的小麥進口，來自美國、加拿大、東歐</string>
+    <string name="ItalyQ5">移工長期困在不人道的居住環境，引發反抗行動而變成紀錄片《綠血》，此片在義大利的哪一個影展放映？</string>
+    <string name="ItalyA5_1">坎城影展</string>
+    <string name="ItalyA5_2">柏林影展</string>
+    <string name="ItalyA5_3">金馬影展</string>
+    <string name="ItalyA5_4">威尼斯影展</string>
+
+    <string name="JapanQ1">1</string>
+    <string name="JapanA1_1">1</string>
+    <string name="JapanA1_2">1</string>
+    <string name="JapanA1_3">1</string>
+    <string name="JapanA1_4">1</string>
+    <string name="JapanQ2">1</string>
+    <string name="JapanA2_1">1</string>
+    <string name="JapanA2_2">1</string>
+    <string name="JapanA2_3">1</string>
+    <string name="JapanA2_4">1</string>
+    <string name="JapanQ3">1</string>
+    <string name="JapanA3_1">1</string>
+    <string name="JapanA3_2">1</string>
+    <string name="JapanA3_3">1</string>
+    <string name="JapanA3_4">1</string>
+    <string name="JapanQ4">1</string>
+    <string name="JapanA4_1">1</string>
+    <string name="JapanA4_2">1</string>
+    <string name="JapanA4_3">1</string>
+    <string name="JapanA4_4">1</string>
+    <string name="JapanQ5">1</string>
+    <string name="JapanA5_1">1</string>
+    <string name="JapanA5_2">1</string>
+    <string name="JapanA5_3">1</string>
+    <string name="JapanA5_4">1</string>
 
 </resources>

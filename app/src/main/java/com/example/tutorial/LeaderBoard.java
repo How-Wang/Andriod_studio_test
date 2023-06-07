@@ -25,7 +25,7 @@ public class LeaderBoard extends AppCompatActivity {
         setContentView(R.layout.activity_leaderboard);
         sqldatabaseHelper = new SqlDataBaseHelper(this,DatabaseName,null, DatabaseVersion, DatabaseTable);
         sqldatabaseHelper.addRecord(PlayerInfo.getName(),PlayerInfo.getRegion(),((GlobalVariable) this.getApplication()).getVariable());
-        ArrayList<HashMap<String,String>> ranks = sqldatabaseHelper.getRank(PlayerInfo.getName(),PlayerInfo.getRegion(),PlayerInfo.getScore());
+        ArrayList<HashMap<String,String>> ranks = sqldatabaseHelper.getRank(PlayerInfo.getName(),PlayerInfo.getRegion(),((GlobalVariable) this.getApplication()).getVariable());
 
         String s = Integer.toString(((GlobalVariable) this.getApplication()).getVariable());
         ((TextView)findViewById(R.id.S_textView)).setText(s);

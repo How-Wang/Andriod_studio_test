@@ -15,7 +15,7 @@ import java.util.HashMap;
 
 public class SqlDataBaseHelper extends SQLiteOpenHelper {
     private static final String DatabaseName = "DietKing";
-    private static final int DatabaseVersion = 6;
+    private static final int DatabaseVersion = 7;
 
     public SqlDataBaseHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version, String TableName) {
         super(context, DatabaseName, null, DatabaseVersion);
@@ -177,28 +177,28 @@ public class SqlDataBaseHelper extends SQLiteOpenHelper {
     }
 
     public void addRecord(String name, String region, int score){
-        Log.d("addRecord", name + "/" + region + "/" + String.valueOf(score));
+
         Cursor cursor = getWritableDatabase().rawQuery("SELECT * FROM Record WHERE name = '" + name +  "' AND region = '" + region + "'" , null);
+        Log.d("addRecord", name + "/" + region + "/" + String.valueOf(score) + "/" + String.valueOf(cursor.getCount()));
         if (cursor.getCount()>0){
-            getWritableDatabase().rawQuery("UPDATE Record SET score = " + score +" WHERE name = '" + name + "' AND region = '" + region + "'", null);
-//            ContentValues values = new ContentValues();
-//            values.put("score",score);
-//            int count = getWritableDatabase().update("Record", values, " name = '" + name + "' AND region = '" + region + "'", null);
+//            getWritableDatabase().rawQuery("UPDATE Record SET score = " + score +" WHERE name = '" + name + "' AND region = '" + region + "'", null);
+            ContentValues values = new ContentValues();
+            values.put("score",score);
+            int count = getWritableDatabase().update("Record", values, " name = '" + name + "' AND region = '" + region + "'", null);
         }
         else {
-            getWritableDatabase().rawQuery("INSERT INTO Record(name, region, score) VALUES ('" + name + "','" + region + "',"+ score +")", null);
-//
-//            String TableName = "Record";
-//            SQLiteDatabase db = getWritableDatabase();
-//            ContentValues values =new ContentValues();
-//            values.put("score", score);
-//            values.put("region", region);
-//            values.put("name", name);
-//            db.insert(TableName, null, values);
+//            getWritableDatabase().rawQuery("INSERT INTO Record(name, region, score) VALUES ('" + name + "','" + region + "',"+ score +")", null);
+
+            String TableName = "Record";
+            SQLiteDatabase db = getWritableDatabase();
+            ContentValues values =new ContentValues();
+            values.put("score", score);
+            values.put("region", region);
+            values.put("name", name);
+            db.insert(TableName, null, values);
         }
     }
     public ArrayList<HashMap<String, String>> getRank(String name, String region, int score){
-        Log
         Cursor cursor = getWritableDatabase().rawQuery("SELECT name, score, RANK() over (ORDER BY score DESC) RK FROM Record WHERE region = '" + region +  "'", null);
         cursor.moveToFirst();
         ArrayList<HashMap<String,String>> ans = new ArrayList<HashMap<String, String>>();
@@ -212,6 +212,7 @@ public class SqlDataBaseHelper extends SQLiteOpenHelper {
         it.put("name", name);
         it.put("rank", "無");
         ans.add(it);
+        Log.d("getRank", String.valueOf(cursor.getCount()));
         for(int i =0;i <cursor.getCount(); i++){
             if (i <= 2){
                 HashMap<String, String> item = new HashMap<String, String>();
@@ -226,6 +227,7 @@ public class SqlDataBaseHelper extends SQLiteOpenHelper {
                 item.put(cursor.getString(0), String.valueOf(cursor.getInt(2)));
                 ans.set(3,item);
             }
+            cursor.moveToNext();
         }
         return ans;
 

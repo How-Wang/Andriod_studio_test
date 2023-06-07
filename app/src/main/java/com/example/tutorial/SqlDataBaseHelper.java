@@ -15,7 +15,7 @@ import java.util.HashMap;
 
 public class SqlDataBaseHelper extends SQLiteOpenHelper {
     private static final String DatabaseName = "DietKing";
-    private static final int DatabaseVersion = 1;
+    private static final int DatabaseVersion = 6;
 
     public SqlDataBaseHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version, String TableName) {
         super(context, DatabaseName, null, DatabaseVersion);
@@ -35,8 +35,7 @@ public class SqlDataBaseHelper extends SQLiteOpenHelper {
                 + ")";
         String SqlTableUnlock = "CREATE TABLE IF NOT EXISTS Unlock("
                 + "account TEXT PRIMARY KEY ,"
-                + "region TEXT PRIMARY KEY,"
-                + "FOREIGN KEY (account) REFERENCES User(account)"
+                + "region TEXT PRIMARY KEY"
                 + ")";
         String SqlTableRank = "CREATE TABLE IF NOT EXISTS Record("
                 + "name TEXT PRIMARY KEY,"
@@ -51,10 +50,35 @@ public class SqlDataBaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-        final String dropUSERSQL = "DROP TABLE User";
-        final String dropUnlockSQL = "DROP TABLE Unlock";
+        Log.d("onUpgrade", "upgrade database");
+        final String dropUSERSQL = "DROP TABLE IF EXISTS User";
+        final String dropUnlockSQL = "DROP TABLE IF EXISTS Unlock";
+
+
+        final String dropRecordSQL = "DROP TABLE IF EXISTS Record";
         sqLiteDatabase.execSQL(dropUSERSQL);
         sqLiteDatabase.execSQL(dropUnlockSQL);
+        sqLiteDatabase.execSQL(dropRecordSQL);
+        String SqlTableUser = "CREATE TABLE IF NOT EXISTS User("
+                + "account TEXT PRIMARY KEY,"
+                + "pwd TEXT not null,"
+                + "coin INTEGER not null,"
+                + "name TEXT not null"
+                + ")";
+        String SqlTableUnlock = "CREATE TABLE IF NOT EXISTS Unlock("
+                + "account TEXT,"
+                + "region TEXT ,"
+                + "PRIMARY KEY (account, region)"
+                + ")";
+        String SqlTableRank = "CREATE TABLE IF NOT EXISTS Record("
+                + "name TEXT,"
+                + "region TEXT,"
+                + "score INTEGER,"
+                + "PRIMARY KEY (name, region)"
+                + ")";
+        sqLiteDatabase.execSQL(SqlTableUser);
+        sqLiteDatabase.execSQL(SqlTableUnlock);
+        sqLiteDatabase.execSQL(SqlTableRank);
 
     }
 
@@ -89,6 +113,9 @@ public class SqlDataBaseHelper extends SQLiteOpenHelper {
         Cursor cursor = getWritableDatabase().rawQuery("SELECT pwd FROM User WHERE account = '"+ account + "'", null);
         Log.d("count " ,String.valueOf(cursor.getCount()));
         cursor.moveToFirst();
+        if(cursor.getCount() == 0){
+            return false;
+        }
         Log.d("pwd", cursor.getString(0));
         if (cursor.getString(0).equals(pwd))
             return true;
@@ -100,7 +127,9 @@ public class SqlDataBaseHelper extends SQLiteOpenHelper {
         HashMap<String, String> info = new HashMap<>();
         cursor.moveToFirst();
         info.put("coin", cursor.getString(0));
-        info.put("name", String.valueOf(cursor.getInt(1)));
+        info.put("name", cursor.getString(1));
+        Log.d("Login coin",cursor.getString(0));
+        Log.d("Login name",cursor.getString(1));
         return info;
     }
 
@@ -148,32 +177,46 @@ public class SqlDataBaseHelper extends SQLiteOpenHelper {
     }
 
     public void addRecord(String name, String region, int score){
-        Cursor cursor = getWritableDatabase().rawQuery("SELECT * FROM Record WHERE name = '" + name +  "'", null);
+        Log.d("addRecord", name + "/" + region + "/" + String.valueOf(score));
+        Cursor cursor = getWritableDatabase().rawQuery("SELECT * FROM Record WHERE name = '" + name +  "' AND region = '" + region + "'" , null);
         if (cursor.getCount()>0){
-//            cursor = getWritableDatabase().rawQuery("UPDATE Record WHERE name = '" + name + "' AND region = '" + region + "'", null);
-            ContentValues values = new ContentValues();
-            values.put("score",score);
-            int count = getWritableDatabase().update("Record", values, " name = '" + name + "' AND region = '" + region + "'", null);
+            getWritableDatabase().rawQuery("UPDATE Record SET score = " + score +" WHERE name = '" + name + "' AND region = '" + region + "'", null);
+//            ContentValues values = new ContentValues();
+//            values.put("score",score);
+//            int count = getWritableDatabase().update("Record", values, " name = '" + name + "' AND region = '" + region + "'", null);
         }
         else {
-            String TableName = "Record";
-            SQLiteDatabase db = getWritableDatabase();
-            ContentValues values =new ContentValues();
-            values.put("score", score);
-            values.put("region", region);
-            values.put("name", name);
-            db.insert(TableName, null, values);
+            getWritableDatabase().rawQuery("INSERT INTO Record(name, region, score) VALUES ('" + name + "','" + region + "',"+ score +")", null);
+//
+//            String TableName = "Record";
+//            SQLiteDatabase db = getWritableDatabase();
+//            ContentValues values =new ContentValues();
+//            values.put("score", score);
+//            values.put("region", region);
+//            values.put("name", name);
+//            db.insert(TableName, null, values);
         }
     }
     public ArrayList<HashMap<String, String>> getRank(String name, String region, int score){
-        Cursor cursor = getWritableDatabase().rawQuery("SELECT name, score, RANK() over (ORDER BY score DESC) RK FROM Record WHERE region '" + region +  "'", null);
+        Log
+        Cursor cursor = getWritableDatabase().rawQuery("SELECT name, score, RANK() over (ORDER BY score DESC) RK FROM Record WHERE region = '" + region +  "'", null);
         cursor.moveToFirst();
-        ArrayList<HashMap<String,String>> ans = new ArrayList<HashMap<String, String>>(4);
+        ArrayList<HashMap<String,String>> ans = new ArrayList<HashMap<String, String>>();
+        for(int i=0; i <3;i++){
+            HashMap<String, String> item = new HashMap<String, String>();
+            item.put("name", "無");
+            item.put("score", "無");
+            ans.add(item);
+        }
+        HashMap<String, String> it= new HashMap<String, String>();
+        it.put("name", name);
+        it.put("rank", "無");
+        ans.add(it);
         for(int i =0;i <cursor.getCount(); i++){
             if (i <= 2){
                 HashMap<String, String> item = new HashMap<String, String>();
                 item.put("name", cursor.getString(0));
-                item.put("score", String.valueOf(cursor.getInt(1)));
+                item.put("score", cursor.getString(1));
                 ans.set(i,item);
             }
             if (cursor.getString(0).equals(name)){

@@ -26,9 +26,10 @@ public class MainActivity extends AppCompatActivity{
             ImageButton imageButton = (ImageButton) v;
             // mageButton imageButton = findViewById(R.id.China_button);
             CharSequence contentDescription = imageButton.getContentDescription();
+
             // If needed, convert the content description to a String
             String contentDescriptionString = contentDescription != null ? contentDescription.toString() : "";
-
+            PlayerInfo.setRegion(contentDescriptionString);
             // split string and feed it into Class name to call
             String className = "com.example.tutorial." + contentDescriptionString + "_Game1"; // Replace with the fully qualified class name of China_Game1
 

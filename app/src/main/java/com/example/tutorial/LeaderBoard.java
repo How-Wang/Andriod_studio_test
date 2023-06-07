@@ -24,19 +24,20 @@ public class LeaderBoard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leaderboard);
         sqldatabaseHelper = new SqlDataBaseHelper(this,DatabaseName,null, DatabaseVersion, DatabaseTable);
+        sqldatabaseHelper.addRecord(PlayerInfo.getName(),PlayerInfo.getRegion(),((GlobalVariable) this.getApplication()).getVariable());
         ArrayList<HashMap<String,String>> ranks = sqldatabaseHelper.getRank(PlayerInfo.getName(),PlayerInfo.getRegion(),PlayerInfo.getScore());
 
         String s = Integer.toString(((GlobalVariable) this.getApplication()).getVariable());
-        ((TextView)findViewById(R.id.S_textView)).setText(ranks.get(3).get(""));
+        ((TextView)findViewById(R.id.S_textView)).setText(s);
         // wait for change
-        ((TextView)findViewById(R.id.N_textView)).setText("");
-        ((TextView)findViewById(R.id.R_textView)).setText("");
-        ((TextView)findViewById(R.id.S1_textView)).setText("");
-        ((TextView)findViewById(R.id.N1_textView)).setText("");
-        ((TextView)findViewById(R.id.S2_textView)).setText("");
-        ((TextView)findViewById(R.id.N2_textView)).setText("");
-        ((TextView)findViewById(R.id.S3_textView)).setText("");
-        ((TextView)findViewById(R.id.N3_textView)).setText("");
+        ((TextView)findViewById(R.id.N_textView)).setText(PlayerInfo.getName());
+        ((TextView)findViewById(R.id.R_textView)).setText(ranks.get(3).get("rank"));
+        ((TextView)findViewById(R.id.S1_textView)).setText(ranks.get(0).get("score"));
+        ((TextView)findViewById(R.id.N1_textView)).setText(ranks.get(0).get("name"));
+        ((TextView)findViewById(R.id.S2_textView)).setText(ranks.get(1).get("score"));
+        ((TextView)findViewById(R.id.N2_textView)).setText(ranks.get(1).get("name"));
+        ((TextView)findViewById(R.id.S3_textView)).setText(ranks.get(2).get("score"));
+        ((TextView)findViewById(R.id.N3_textView)).setText(ranks.get(2).get("name"));
     }
 
     public void HomeClicked(View v){

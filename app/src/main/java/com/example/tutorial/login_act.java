@@ -53,6 +53,7 @@ public class login_act extends AppCompatActivity {
             HashMap<String,String> info = sqldatabaseHelper.getAccountInfo(loginAC);
             PlayerInfo.setCoin(Integer.parseInt(info.get("coin")));
             PlayerInfo.setName(info.get("name"));
+            Log.d("playerName" , info.get("name"));
             PlayerInfo.setAccount(loginAC);
             Toast.makeText(getApplicationContext(), "登入成功", Toast.LENGTH_SHORT).show();
             Intent i = new Intent(this, main_page.class);

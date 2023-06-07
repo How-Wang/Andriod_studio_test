@@ -27,19 +27,25 @@ public class SqlDataBaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         Log.d("create table", " create talbe");
         System.out.println("create table");
-        String SqlTable = "CREATE TABLE IF NOT EXISTS User("
+        String SqlTableUser = "CREATE TABLE IF NOT EXISTS User("
                 + "account TEXT PRIMARY KEY,"
                 + "pwd TEXT not null,"
                 + "coin INTEGER not null,"
                 + "name TEXT not null"
                 + ")";
-        String SqlTable2 = "CREATE TABLE IF NOT EXISTS Unlock("
+        String SqlTableUnlock = "CREATE TABLE IF NOT EXISTS Unlock("
                 + "account TEXT PRIMARY KEY ,"
                 + "region TEXT PRIMARY KEY,"
                 + "FOREIGN KEY (account) REFERENCES User(account)"
                 + ")";
-        sqLiteDatabase.execSQL(SqlTable);
-       // sqLiteDatabase.execSQL(SqlTable2);
+        String SqlTableRank = "CREATE TABLE IF NOT EXISTS Record("
+                + "name TEXT PRIMARY KEY,"
+                + "region TEXT PRIMARY KEY,"
+                + "score int"
+                + ")";
+        sqLiteDatabase.execSQL(SqlTableUser);
+        sqLiteDatabase.execSQL(SqlTableUnlock);
+        sqLiteDatabase.execSQL(SqlTableRank);
 
     }
 
@@ -139,5 +145,46 @@ public class SqlDataBaseHelper extends SQLiteOpenHelper {
             arrayList.add(hashMap);
         }
         return arrayList;
+    }
+
+    public void addRecord(String name, String region, int score){
+        Cursor cursor = getWritableDatabase().rawQuery("SELECT * FROM Record WHERE name = '" + name +  "'", null);
+        if (cursor.getCount()>0){
+//            cursor = getWritableDatabase().rawQuery("UPDATE Record WHERE name = '" + name + "' AND region = '" + region + "'", null);
+            ContentValues values = new ContentValues();
+            values.put("score",score);
+            int count = getWritableDatabase().update("Record", values, " name = '" + name + "' AND region = '" + region + "'", null);
+        }
+        else {
+            String TableName = "Record";
+            SQLiteDatabase db = getWritableDatabase();
+            ContentValues values =new ContentValues();
+            values.put("score", score);
+            values.put("region", region);
+            values.put("name", name);
+            db.insert(TableName, null, values);
+        }
+    }
+    public ArrayList<HashMap<String, String>> getRank(String name, String region, int score){
+        Cursor cursor = getWritableDatabase().rawQuery("SELECT name, score, RANK() over (ORDER BY score DESC) RK FROM Record WHERE region '" + region +  "'", null);
+        cursor.moveToFirst();
+        ArrayList<HashMap<String,String>> ans = new ArrayList<HashMap<String, String>>(4);
+        for(int i =0;i <cursor.getCount(); i++){
+            if (i <= 2){
+                HashMap<String, String> item = new HashMap<String, String>();
+                item.put("name", cursor.getString(0));
+                item.put("score", String.valueOf(cursor.getInt(1)));
+                ans.set(i,item);
+            }
+            if (cursor.getString(0).equals(name)){
+                HashMap<String, String> item = new HashMap<String, String>();
+                item.put("name", name);
+                item.put("rank", String.valueOf(cursor.getInt(2)));
+                item.put(cursor.getString(0), String.valueOf(cursor.getInt(2)));
+                ans.set(3,item);
+            }
+        }
+        return ans;
+
     }
 }

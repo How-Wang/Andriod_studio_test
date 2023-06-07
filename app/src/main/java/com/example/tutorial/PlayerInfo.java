@@ -5,6 +5,8 @@ public class PlayerInfo {
     static private String pwd;
     static private int coin;
     static private String name;
+    static private String region;
+    static private int score;
 
     public static void setAccount(String _account){
         account = _account;
@@ -18,6 +20,8 @@ public class PlayerInfo {
     public static void setName(String _name){
         name = _name;
     }
+    public static void setRegion(String _region){ region = _region;}
+    public static void setScore(int _score) { score = _score;};
 
     public static String getAccount(){
         return account;
@@ -31,5 +35,7 @@ public class PlayerInfo {
     public static String getName() {
         return name;
     }
+    public static String getRegion(){ return region;}
+    public static int getScore(){return score;};
 
 }

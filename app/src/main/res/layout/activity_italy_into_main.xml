@@ -5,16 +5,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Italy_into_main">
+    <ImageView
+        android:id="@+id/background_imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#EFE0C6"
+        android:contentDescription="@string/background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/plantext" />
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="412dp"
-        android:layout_height="99dp"
+        android:layout_width="288dp"
+        android:layout_height="63dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="92dp"
         android:text="別再亂加配料了！正宗的拿坡里披薩只有這三種"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.579"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

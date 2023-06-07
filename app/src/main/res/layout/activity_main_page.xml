@@ -6,16 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".main_page">
 
+    <ImageView
+        android:id="@+id/background_imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#EFE0C6"
+        android:contentDescription="@string/background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/main_background" />
+
     <Button
         android:id="@+id/button8"
         android:layout_width="179dp"
         android:layout_height="136dp"
         android:layout_marginStart="128dp"
-        android:layout_marginTop="155dp"
+        android:layout_marginTop="212dp"
         android:layout_marginEnd="104dp"
         android:onClick="IntroIsClicked"
         android:text="介紹區"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,11 +39,12 @@
         android:layout_width="190dp"
         android:layout_height="146dp"
         android:layout_marginStart="119dp"
-        android:layout_marginTop="131dp"
+        android:layout_marginTop="188dp"
         android:layout_marginEnd="102dp"
         android:onClick="GameIsClicked"
         android:text="遊戲區"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button8" />
 </androidx.constraintlayout.widget.ConstraintLayout>

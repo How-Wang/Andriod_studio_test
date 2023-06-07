@@ -55,7 +55,7 @@ public class login_act extends AppCompatActivity {
             PlayerInfo.setName(info.get("name"));
             PlayerInfo.setAccount(loginAC);
             Toast.makeText(getApplicationContext(), "登入成功", Toast.LENGTH_SHORT).show();
-            Intent i = new Intent(this, MainActivity.class);
+            Intent i = new Intent(this, main_page.class);
             startActivity(i);
         }else{
             Toast.makeText(getApplicationContext(), "登入失敗", Toast.LENGTH_SHORT).show();

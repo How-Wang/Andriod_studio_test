@@ -44,8 +44,8 @@ public class SqlDataBaseHelper extends SQLiteOpenHelper {
                 + "score int"
                 + ")";
         sqLiteDatabase.execSQL(SqlTableUser);
-        sqLiteDatabase.execSQL(SqlTableUnlock);
-        sqLiteDatabase.execSQL(SqlTableRank);
+//        sqLiteDatabase.execSQL(SqlTableUnlock);
+//        sqLiteDatabase.execSQL(SqlTableRank);
 
     }
 

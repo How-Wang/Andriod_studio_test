@@ -25,6 +25,10 @@ public class Signup_Act extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
         sqldatabaseHelper = new SqlDataBaseHelper(this,DatabaseName,null, DatabaseVersion, DatabaseTable);
     }
+    public void Goback(View v){
+        Intent i = new Intent(this, login_act.class);
+        startActivity(i);
+    }
     public void signupClicked(View v){
         TextView t = findViewById(R.id.SignupAccount);
         String signupAC = t.getText().toString();

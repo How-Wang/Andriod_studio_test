@@ -1,7 +1,5 @@
 package com.example.tutorial;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,12 +8,14 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class China_Game2 extends AppCompatActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class Italy_Game5 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_china_game2);
+        setContentView(R.layout.activity_italy_game5);
 
         String s = Integer.toString(((GlobalVariable) this.getApplication()).getVariable());
         ((TextView)findViewById(R.id.Score_textview)).setText(s);
@@ -39,7 +39,7 @@ public class China_Game2 extends AppCompatActivity {
             @Override
             public void run() {
                 // Start the next activity here
-                startActivity(new Intent(China_Game2.this, China_Game3.class));
+                startActivity(new Intent(Italy_Game5.this, LeaderBoard.class));
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         }, 2000);  // 2000 milliseconds = 2 seconds
@@ -53,7 +53,7 @@ public class China_Game2 extends AppCompatActivity {
             @Override
             public void run() {
                 // Start the next activity here
-                startActivity(new Intent(China_Game2.this, China_Game3.class));
+                startActivity(new Intent(Italy_Game5.this, LeaderBoard.class));
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         }, 2000);  // 2000 milliseconds = 2 seconds

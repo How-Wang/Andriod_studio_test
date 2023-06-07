@@ -6,16 +6,57 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/Country_background_imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#EFE0C6"
+        android:contentDescription="@string/background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/country_area_background" />
+
+    <ImageButton
+        android:id="@+id/Japan_button"
+        android:layout_width="328dp"
+        android:layout_height="111dp"
+        android:layout_marginTop="372dp"
+        android:contentDescription="@string/japan_button_text"
+        android:onClick="CountryClicked"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/japan" />
+
     <ImageButton
         android:id="@+id/China_button"
         android:layout_width="328dp"
         android:layout_height="111dp"
-        android:layout_marginTop="44dp"
-        android:contentDescription="@string/first_button_text"
+        android:layout_marginTop="208dp"
+        android:contentDescription="@string/china_button_text"
         android:onClick="CountryClicked"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/_3783935_1097602047078723_1219890408507572224_o" />
+        app:srcCompat="@drawable/china" />
+
+    <ImageButton
+        android:id="@+id/Italy_button"
+        android:layout_width="328dp"
+        android:layout_height="111dp"
+        android:layout_marginTop="536dp"
+        android:contentDescription="@string/italy_button_text"
+        android:onClick="CountryClicked"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/italy" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

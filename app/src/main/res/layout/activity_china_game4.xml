@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F6F4F4"
-    tools:context=".China_Game1">
+    tools:context=".China_Game4">
 
     <ImageView
         android:id="@+id/imageView"
@@ -22,7 +22,7 @@
         app:layout_constraintVertical_bias="0.45" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -36,8 +36,8 @@
         android:id="@+id/button1"
         android:layout_width="217dp"
         android:layout_height="104dp"
-        android:onClick="WrongClicked"
-        android:text="@string/ChinaA1_1"
+        android:onClick="CorrectClicked"
+        android:text="@string/ChinaA4_1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +49,7 @@
         android:layout_width="217dp"
         android:layout_height="104dp"
         android:onClick="WrongClicked"
-        android:text="@string/ChinaA1_2"
+        android:text="@string/ChinaA4_2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,7 +61,7 @@
         android:layout_width="217dp"
         android:layout_height="104dp"
         android:onClick="WrongClicked"
-        android:text="@string/ChinaA1_3"
+        android:text="@string/ChinaA4_3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,8 +72,8 @@
         android:id="@+id/button4"
         android:layout_width="217dp"
         android:layout_height="104dp"
-        android:onClick="CorrectClicked"
-        android:text="@string/ChinaA1_4"
+        android:onClick="WrongClicked"
+        android:text="@string/ChinaA4_4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -86,7 +86,7 @@
         android:layout_height="173dp"
         android:background="#DDFFFFFF"
         android:importantForAccessibility="no"
-        android:text="@string/ChinaQ1"
+        android:text="@string/ChinaQ4"
         app:layout_constraintBottom_toTopOf="@+id/button1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

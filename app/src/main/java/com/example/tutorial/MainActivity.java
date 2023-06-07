@@ -1,14 +1,11 @@
 package com.example.tutorial;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatImageButton;
 
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 
@@ -28,7 +25,6 @@ public class MainActivity extends AppCompatActivity{
 
             ImageButton imageButton = (ImageButton) v;
             // mageButton imageButton = findViewById(R.id.China_button);
-
             CharSequence contentDescription = imageButton.getContentDescription();
             // If needed, convert the content description to a String
             String contentDescriptionString = contentDescription != null ? contentDescription.toString() : "";
